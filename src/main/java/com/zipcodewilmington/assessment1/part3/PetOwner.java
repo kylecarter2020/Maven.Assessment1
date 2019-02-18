@@ -19,6 +19,7 @@ public class PetOwner {
         if(!(pets == null)) {
             for (Pet pet : pets) {
                 this.petList.add(pet);
+                pet.setOwner(this);
             }
         }
     }
