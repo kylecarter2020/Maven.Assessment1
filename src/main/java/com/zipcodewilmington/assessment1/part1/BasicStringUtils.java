@@ -9,7 +9,13 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+        String result = "";
+        result += str.toUpperCase().charAt(0);
+
+        for (int i = 1; i < str.length(); i++) {
+            result += str.charAt(i);
+        }
+        return result;
     }
 
     /**
@@ -17,7 +23,12 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        String reversed = "";
+
+        for (int i = 1; i <= str.length(); i++) {
+            reversed += str.charAt(str.length() -i);
+        }
+        return reversed;
     }
 
     /**
@@ -25,7 +36,10 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        str = reverse(str);
+        str = camelCase(str);
+
+        return str;
     }
 
 
@@ -34,7 +48,13 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+        String result = "";
+
+        for (int i = 1; i < str.length() - 1; i++) {
+            result += str.charAt(i);
+        }
+
+        return result;
     }
 
     /**
@@ -42,6 +62,17 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isUpperCase(str.charAt(i))) {
+                result += str.toLowerCase().charAt(i);
+            }
+            else {
+                result += str.toUpperCase().charAt(i);
+            }
+        }
+
+        return result;
     }
 }
