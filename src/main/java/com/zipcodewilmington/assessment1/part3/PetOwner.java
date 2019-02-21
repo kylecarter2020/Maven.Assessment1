@@ -131,6 +131,9 @@ public class PetOwner {
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
-        return petList.toArray(new Pet[petList.size()]);
+        if(petList.isEmpty())
+            return petList.toArray(new Pet[1]);
+        else
+            return petList.toArray(new Pet[petList.size()]);
     }
 }
